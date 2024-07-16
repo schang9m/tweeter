@@ -1,0 +1,17 @@
+nav {
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between; /* Distribute items along the main axis */
+  align-items: flex-end; /* Align items vertically */
+  padding: 1.5em;
+}
+
+span {
+  font-family: "Bungee";
+}
+
+p {
+  color: #000000;
+}
