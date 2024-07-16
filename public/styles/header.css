@@ -1,0 +1,23 @@
+header {
+  width: 100%;
+  background-color: blanchedalmond;
+}
+.avatar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bg{
+  min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+}

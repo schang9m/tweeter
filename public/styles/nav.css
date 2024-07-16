@@ -4,14 +4,15 @@ nav {
   color: #FFFFFF;
   display: flex;
   justify-content: space-between; /* Distribute items along the main axis */
-  align-items: flex-end; /* Align items vertically */
+  align-items: center; /* Align items vertically */
   padding: 1.5em;
+  position: fixed;
 }
 
-span {
+nav span {
   font-family: "Bungee";
 }
 
-p {
+.writeTweet {
   color: #000000;
 }
