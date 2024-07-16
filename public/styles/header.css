@@ -1,6 +1,7 @@
 header {
   width: 100%;
   background-color: blanchedalmond;
+  background-image: url("/images/inspiration-geometry.png")
 }
 .avatar{
   display: flex;
@@ -19,5 +20,4 @@ div h2{
   /* Set up proportionate scaling */
   width: 100%;
   height: auto;
-	
 }
