@@ -26,11 +26,11 @@ body {
 main {
   display: flex;
   justify-content: center;
-  background-color: #f4f1ec;
+  background-color: inherit;
   flex-direction: column;
-  padding-left: 5%;
-  padding-right: 5%;
+  width: 90%;
   text-align: center;
+  margin: 0 auto;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

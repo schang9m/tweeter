@@ -1,0 +1,22 @@
+.tweet-button {
+  font-family: "Bungee";
+  display: flex;
+  justify-content: space-between;
+}
+.tweet-button button {
+  background-color: rgb(24, 24, 95);
+  color: white;
+}
+
+.new-tweet label {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+#tweet-text {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-bottom: 5px solid black;
+  background-color:  #f4f1ec
+}
