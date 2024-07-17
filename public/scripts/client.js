@@ -31,8 +31,7 @@ $(document).ready(function() {
   const createTweetElement = function(tweetData) {
     const {name, avatars, handle} = tweetData.user;
     const body = tweetData.content.text;
-    const dateDiff = (new Date()) - (new Date(tweetData.created_at));
-    const date = Math.round(dateDiff/(1000*60*60*24));
+    const date = timeago.format(tweetData.created_at);
 
     const $article = $("<article class='tweet'>");
     const $header = $("<header>");
@@ -44,7 +43,7 @@ $(document).ready(function() {
     const $handle = $('<p>').text(handle);
     const $divBody = $('<div><p>').text(body);
     const $footer = $('<footer>');
-    const $date = $('<p>').text(`${date} days ago`)
+    const $date = $('<time>').text(`${date}`)
     const $icon = $('<div>')
     $($icon).attr('id', 'interact')
     $icon.append('<i class="fa-solid fa-flag">')
@@ -88,10 +87,12 @@ $(document).ready(function() {
     // takes return value and appends it to the tweets container
     for (let tweetData of tweets) {
       const $tweet = createTweetElement(tweetData);
-      $('#tweets-container').append($tweet);
-      console.log($('#tweets-container'));
-      console.log($tweet)
+      $('#tweets-container').prepend($tweet);
     }
   }
   renderTweets(data);
+  const loadTweets = function() {
+    $.get('http://localhost:8080/tweets', renderTweets)
+  }
+  loadTweets();
 })
