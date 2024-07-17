@@ -1,0 +1,35 @@
+.tweet{
+  outline: auto;
+  background-color: white;
+}
+article.tweet:hover{
+  box-shadow: 10px 5px 5px red;
+}
+.tweet header{
+  width: 100%;
+  height:100px;
+  color: white;
+  padding: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tweet footer{
+  display: flex;
+  justify-content: space-between;
+  margin: 2%;
+  border-top: 3px solid #000000;
+  text-align: left;
+  padding-left: 4%;
+  font: 0.6em sans-serif;
+}
+.tweet footer #interact {
+  padding-top: 2%;
+  text-align: right;
+}
+.tweet footer #interact i:hover{
+  padding-top: 2%;
+  text-align: right;
+  color: red;
+}
