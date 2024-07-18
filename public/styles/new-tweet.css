@@ -39,4 +39,5 @@
 
 #error-messages p {
   margin: 0; /* Remove default paragraph margin */
+  padding: 10px; 
 }

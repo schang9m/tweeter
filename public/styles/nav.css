@@ -1,7 +1,7 @@
 nav {
   height: 120px;
-  background-color: #4056A1;
-  color: #FFFFFF;
+  background-color: blanchedalmond;
+  color: #000000;
   width: 100%;
   display: flex;
   justify-content: space-between; /* Distribute items along the main axis */
@@ -9,6 +9,7 @@ nav {
   padding: 1.5em;
   position: fixed;
   top: 0;
+  background-image: url("/images/inspiration-geometry.png");
 }
 
 nav span {
@@ -19,4 +20,7 @@ nav span {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+nav .fa-solid {
+  color: red;
 }

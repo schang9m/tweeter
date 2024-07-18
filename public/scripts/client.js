@@ -101,7 +101,7 @@ $(document).ready(function() {
         data: data
       })
       .then(function(){
-        $("tweets-container").empty();
+        $("#tweets-container").empty();
         $(".tweeting")[0].reset();
         loadTweets();
       });
