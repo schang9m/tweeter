@@ -76,23 +76,35 @@ $(document).ready(function() {
       });
   }
   loadTweets();
-
+  const reset = function() {
+    $(".tweeting")[0].reset();
+    $("output.counter").text(140);
+    $("output.counter").css('color', "");
+  }
   $(".tweeting").on('submit', function(event) {
     event.preventDefault();
     const data = $(this).serialize();
     const count =$("#tweet-text").val().trim().length;
     
-    if(count > 140){
-      return alert("Too many words!")
+    if (count > 140) {
+      $("#error-messages").text("Too Many Words Yo, 140 Limit Pls").slideDown(1400);
+      reset();
+      return $("#error-messages").slideUp(1500, function() {$(this).empty()}); 
     } else if (count === 0) {
-      return alert("no input!")
+      $("#error-messages").text("You Need To Enter Something?!").slideDown(1400);
+      reset(); 
+      return $("#error-messages").slideUp(1500, function() {$(this).empty()}); 
+    } else {
+      $.ajax({
+        type: "POST",
+        url: '/tweets',
+        data: data
+      })
+      .then(function(){
+        $("tweets-container").empty();
+        $(".tweeting")[0].reset();
+        loadTweets();
+      });
     }
-    $.ajax({
-      type: "POST",
-      url: '/tweets',
-      data: data
-    })
-    .then(loadTweets);
-    $(".tweeting")[0].reset();
   })
 })

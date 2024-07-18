@@ -34,8 +34,6 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
     <!-- char-counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-    <!-- submit JS -->
-    <script type="text/javascript" src="/scripts/submit.js"></script>
   </head>
 
   <body>
@@ -63,6 +61,9 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+        <div id="error-messages">
+          <!-- Error messages will be displayed here -->
+        </div>
         <form method="POST" action="/tweets/" class="tweeting">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
