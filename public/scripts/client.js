@@ -81,17 +81,32 @@ $(document).ready(function() {
     $("output.counter").text(140);
     $("output.counter").css('color', "");
   }
+  //slide new tweet up and down
+  $(".writeTweet").on("click", function(){
+    $(".tweeting").slideToggle( "slow", function(){
+      //auto focus
+      $('#tweet-text').focus();
+    });
+  });
+  //auto submit when press enter 
+  $("#tweet-text").on("keypress", function(event){
+    if (event.key === "Enter"){
+      event.preventDefault();
+      $(".tweeting").submit();
+    }
+  })
+
   $(".tweeting").on('submit', function(event) {
     event.preventDefault();
     const data = $(this).serialize();
     const count =$("#tweet-text").val().trim().length;
     
     if (count > 140) {
-      $("#error-messages").text("Too Many Words Yo, 140 Limit Pls").slideDown(1400);
+      $("#error-messages").text("❌Too Many Words Yo, 140 Limit Pls❌").slideDown(400);
       reset();
-      return $("#error-messages").slideUp(1500, function() {$(this).empty()}); 
+      return $("#error-messages").slideUp(3500, function() {$(this).empty()}); 
     } else if (count === 0) {
-      $("#error-messages").text("You Need To Enter Something?!").slideDown(1400);
+      $("#error-messages").text("❌You Need To Enter Something?!❌").slideDown(400);
       reset(); 
       return $("#error-messages").slideUp(1500, function() {$(this).empty()}); 
     } else {
@@ -107,4 +122,11 @@ $(document).ready(function() {
       });
     }
   })
+  //move the icon down
+  $("nav .writeTweet").hover(function() {
+    $('nav .fa-solid').stop().animate({top:10});
+}, function() {
+    $('nav .fa-solid').stop().animate({top:0});
+});
+
 })

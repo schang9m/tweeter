@@ -11,16 +11,26 @@ nav {
   top: 0;
   background-image: url("/images/inspiration-geometry.png");
 }
-
 nav span {
   font-family: "Bungee";
 }
-
-.writeTweet {
+nav span:hover {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  background-clip: text;
+  color: transparent;
+}
+nav .fa-solid {
+  color: red;
+  position: relative;
+}
+nav .fa-solid:hover {
+  color: gold;
+}
+nav .writeTweet {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-nav .fa-solid {
-  color: red;
+nav .writeTweet:hover {
+  color: #78E3FD;
 }

@@ -1,0 +1,70 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+  font-family: 'Source Sans 3', sans-serif;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 24px;
+  padding-top: 120px; 
+}
+main {
+  display: flex;
+  justify-content: center;
+  background-color: inherit;
+  flex-direction: column;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  .tweeting {
+    display: none ;
+  }
+}
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+   /* Another tablet breakpoint is minimum width of 768px */
+   @media only screen and (min-width: 768px) {
+    /* Write CSS rules that target Tablets screen sizes upwards - including desktops */
+    
+  }
+
+  /* Laptops / Desktops: minimum width of 1024px */
+  @media only screen and (min-width: 1024px) {
+    /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
+    body .my-profile{
+      width: 40%;
+      max-width: 550px;
+      margin-left: 5%;
+      display: flex;
+    }
+    .container{
+      width: 45%;
+      margin: 0;
+    }
+    .flex-row{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    nav {
+      background-color: #4056A1;
+      background-image: none;
+      color: white;
+    }
+  }

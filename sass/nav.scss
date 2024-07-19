@@ -1,0 +1,41 @@
+$nav-color:#000000;
+$nav-background:blanchedalmond;
+@mixin rainbowText(){
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  background-clip: text;
+  color: transparent;
+}
+nav {
+  height: 120px;
+  background-color: $nav-background;
+  color: $nav-color;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Distribute items along the main axis */
+  align-items: center; /* Align items vertically */
+  padding: 1.5em;
+  position: fixed;
+  top: 0;
+  background-image: url("/images/inspiration-geometry.png");
+  span {
+    font-family: "Bungee";
+  }
+  span:hover {
+    @include rainbowText();
+  }
+  .fa-solid {
+    color: red;
+    position: relative;
+  }
+  .fa-solid:hover{
+    color: gold;
+  }
+  .writeTweet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .writeTweet:hover{
+    color: #78E3FD
+  }
+}
