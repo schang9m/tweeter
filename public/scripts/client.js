@@ -79,20 +79,14 @@ $(document).ready(function() {
   const autoFocus = function(){
     //auto focus
     $('#tweet-text').focus();
-    //clear text area
-    if($("textarea")[0].value === "Enter Your Tweet") {
-      $("textarea")[0].value = "";
-    } else if ($("textarea")[0].value === ""){
-      $("textarea")[0].value = "Enter Your Tweet";
-    }
   }
   loadTweets();
   //reseting the textbox
-  const reset = function() {
-    $(".tweeting")[0].reset();
-    $("output.counter").text(140);
-    $("output.counter").css('color', "");
-  };
+  // const reset = function() {
+  //   // $(".tweeting")[0].reset();
+  //   $("output.counter").text(140);
+  //   $("output.counter").css('color', "");
+  // };
   //slide new tweet up and down
   $(".writeTweet").on("click", function() {
     $(".tweeting").slideToggle("slow", function() {
@@ -113,20 +107,10 @@ $(document).ready(function() {
     const count = $("#tweet-text").val().trim().length;
     
     if (count > 140) {
-      $("#error-messages").text("❌Too Many Words Yo, 140 Limit Pls❌").slideDown(400);
-      reset();
-      autoFocus()
-      return $("#error-messages").slideUp(3500, function() {
-        $(this).empty();
-      });
-    } else if (count === 0) {
-      $("#error-messages").text("❌You Need To Enter Something?!❌").slideDown(400);
-      reset();
-      autoFocus()
-      return $("#error-messages").slideUp(1500, function() {
-        $(this).empty();
-      });
-    } else {
+      $("#error-messages").text("❌Too Many Words Yo, 140 Limit Pls❌").slideDown(400).delay(4000).slideUp(400);
+  } else if (count === 0) {
+      $("#error-messages").text("❌You Need To Enter Something?!❌").slideDown(400).delay(4000).slideUp(400);
+  } else {
       $.ajax({
         type: "POST",
         url: '/tweets',
@@ -139,11 +123,7 @@ $(document).ready(function() {
         },
         error: function(xhr, status, error) {
           // Handle the error here
-          $("#error-messages").text(`❌AJAX request failed:${status},${error}❌`).slideDown(400);
-          reset();
-          return $("#error-messages").slideUp(1500, function() {
-            $(this).empty();
-          });
+          $("#error-messages").text(`❌AJAX request failed:${status},${error}❌`).slideDown(400).delay(4000).slideUp(400);
           // You can display an error message to the user or take other actions
         }
       });
