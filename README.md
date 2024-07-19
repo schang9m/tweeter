@@ -16,3 +16,6 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+!["gif of the tweet page"] (https://github.com/schang9m/tweeter/blob/c8775df3785cd42aea70dffb72910a7dffc1a790/docs/tweet-example.gif)
