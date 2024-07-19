@@ -82,11 +82,11 @@ $(document).ready(function() {
   }
   loadTweets();
   //reseting the textbox
-  // const reset = function() {
-  //   // $(".tweeting")[0].reset();
-  //   $("output.counter").text(140);
-  //   $("output.counter").css('color', "");
-  // };
+  const reset = function() {
+    $(".tweeting")[0].reset();
+    $("output.counter").text(140);
+    $("output.counter").css('color', "");
+  };
   //slide new tweet up and down
   $(".writeTweet").on("click", function() {
     $(".tweeting").slideToggle("slow", function() {
@@ -98,6 +98,7 @@ $(document).ready(function() {
     if (event.key === "Enter") {
       event.preventDefault();
       $(".tweeting").submit();
+      reset();
     }
   });
 
@@ -117,7 +118,7 @@ $(document).ready(function() {
         data: data,
         success: function() {
           $("#tweets-container").empty();
-          $(".tweeting")[0].reset();
+          reset();
           loadTweets();
           autoFocus();
         },
