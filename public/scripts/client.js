@@ -76,6 +76,7 @@ $(document).ready(function() {
       });
   }
   loadTweets();
+  //reseting the textbox
   const reset = function() {
     $(".tweeting")[0].reset();
     $("output.counter").text(140);
@@ -113,13 +114,20 @@ $(document).ready(function() {
       $.ajax({
         type: "POST",
         url: '/tweets',
-        data: data
-      })
-      .then(function(){
-        $("#tweets-container").empty();
-        $(".tweeting")[0].reset();
-        loadTweets();
-      });
+        data: data,
+        success: function() {
+            $("#tweets-container").empty();
+            $(".tweeting")[0].reset();
+            loadTweets();
+        },
+        error: function(xhr, status, error) {
+            // Handle the error here
+            $("#error-messages").text(`❌AJAX request failed:${status},${error}❌`).slideDown(400);
+            reset(); 
+            return $("#error-messages").slideUp(1500, function() {$(this).empty()}); 
+            // You can display an error message to the user or take other actions
+        }
+    });
     }
   })
   //move the icon down
