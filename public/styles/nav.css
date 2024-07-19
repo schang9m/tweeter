@@ -34,7 +34,8 @@ nav .writeTweet {
 nav .writeTweet:hover {
   color: #78E3FD;
 }
-nav #topBtn {
+
+#topBtn {
   display: none;
   width: 100px;
   height: 100px;
@@ -42,7 +43,9 @@ nav #topBtn {
   bottom: 20px;
   right: 5px;
   z-index: 99;
+  margin: 2%;
 }
-nav #topBtn:hover {
-  background-color: gold;
+
+#topBtn:hover {
+  background-color: dimgrey;
 }

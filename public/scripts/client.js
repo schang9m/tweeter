@@ -140,8 +140,11 @@ $(document).ready(function() {
 $(window).on('scroll', function() {
   if ($(this).scrollTop() > 100) {
     $("#topBtn").fadeIn();
+    $("nav").fadeOut();
   } else {
     $("#topBtn").fadeOut();
+    $("nav").fadeIn();
+
   }
 });
 //clicking on the top button

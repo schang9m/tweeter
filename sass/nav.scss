@@ -38,16 +38,18 @@ nav {
   .writeTweet:hover{
     color: #78E3FD
   }
-  #topBtn{
-    display: none;
-    width: 100px;
-    height: 100px;
-    position: fixed;
-    bottom: 20px;
-    right: 5px;
-    z-index: 99;
-  }
-  #topBtn:hover{
-    background-color: gold;
-  }
+}
+
+#topBtn{
+  display: none;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 20px;
+  right: 5px;
+  z-index: 99;
+  margin: 2%;
+}
+#topBtn:hover{
+  background-color:dimgrey;
 }
