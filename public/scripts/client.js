@@ -75,6 +75,17 @@ $(document).ready(function() {
         console.error(error);
       });
   };
+  //focus onto the textfield and clear the texts
+  const autoFocus = function(){
+    //auto focus
+    $('#tweet-text').focus();
+    //clear text area
+    if($("textarea")[0].value === "Enter Your Tweet") {
+      $("textarea")[0].value = "";
+    } else if ($("textarea")[0].value === ""){
+      $("textarea")[0].value = "Enter Your Tweet";
+    }
+  }
   loadTweets();
   //reseting the textbox
   const reset = function() {
@@ -85,8 +96,7 @@ $(document).ready(function() {
   //slide new tweet up and down
   $(".writeTweet").on("click", function() {
     $(".tweeting").slideToggle("slow", function() {
-      //auto focus
-      $('#tweet-text').focus();
+      autoFocus();
     });
   });
   //auto submit when press enter
@@ -105,12 +115,14 @@ $(document).ready(function() {
     if (count > 140) {
       $("#error-messages").text("❌Too Many Words Yo, 140 Limit Pls❌").slideDown(400);
       reset();
+      autoFocus()
       return $("#error-messages").slideUp(3500, function() {
         $(this).empty();
       });
     } else if (count === 0) {
       $("#error-messages").text("❌You Need To Enter Something?!❌").slideDown(400);
       reset();
+      autoFocus()
       return $("#error-messages").slideUp(1500, function() {
         $(this).empty();
       });
@@ -123,6 +135,7 @@ $(document).ready(function() {
           $("#tweets-container").empty();
           $(".tweeting")[0].reset();
           loadTweets();
+          autoFocus();
         },
         error: function(xhr, status, error) {
           // Handle the error here
@@ -158,7 +171,7 @@ $(document).ready(function() {
     $("html, body").animate({scrollTop: 0}, 500);
     $(".tweeting").slideToggle("slow", function() {
     //auto focus
-      $('#tweet-text').focus();
+      autoFocus();
     });
   });
 });
