@@ -136,5 +136,20 @@ $(document).ready(function() {
 }, function() {
     $('nav .fa-solid').stop().animate({top:0});
 });
-
+//top button shows up and gone as you scroll
+$(window).on('scroll', function() {
+  if ($(this).scrollTop() > 100) {
+    $("#topBtn").fadeIn();
+  } else {
+    $("#topBtn").fadeOut();
+  }
+});
+//clicking on the top button
+$("#topBtn").on('click', function(e) {
+  $("html, body").animate({scrollTop: 0}, 500);
+  $(".tweeting").slideToggle( "slow", function(){
+    //auto focus
+    $('#tweet-text').focus();
+  })
+});
 })

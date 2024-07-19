@@ -34,3 +34,15 @@ nav .writeTweet {
 nav .writeTweet:hover {
   color: #78E3FD;
 }
+nav #topBtn {
+  display: none;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 20px;
+  right: 5px;
+  z-index: 99;
+}
+nav #topBtn:hover {
+  background-color: gold;
+}
