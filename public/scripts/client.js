@@ -67,7 +67,7 @@ $(document).ready(function() {
     }
   };
   const loadTweets = function() {
-    $.get('http://localhost:8080/tweets')
+    $.get('/tweets')
       .done((data) => {
         renderTweets(data);
       })
